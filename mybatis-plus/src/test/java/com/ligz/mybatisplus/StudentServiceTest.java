@@ -20,9 +20,9 @@ public class StudentServiceTest {
 	@Test
 	public void addStudent(){
 		Student student = new Student();
-		student.setName("ligz");
+		student.setName("ligzz");
 		student.setClassName("math");
-		student.setTeatherName("zz");
+		student.setTeatherName("zzz");
 		service.save(student);
 	}
 

@@ -10,6 +10,8 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>springboot-start</module>
+    <module>jdbc-template</module>
     <module>mybatis-plus</module>
   </modules>
 </project>

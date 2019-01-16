@@ -110,8 +110,9 @@ public class CodeGenerator {
 		StrategyConfig strategy = new StrategyConfig();
 		strategy.setNaming(NamingStrategy.underline_to_camel);
 		strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-		//strategy.setSuperEntityClass("com.ligz.springbootstudy.commont.BaseEntity");
-		strategy.setEntityLombokModel(true);
+		//strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");
+		strategy.setEntityBuilderModel(true);//构建者模型
+		//strategy.setEntityLombokModel(true);//为lombok模型
 		strategy.setRestControllerStyle(true);
 		//strategy.setSuperControllerClass("com.ligz.springbootstudy.commont.BaseController");
 		strategy.setInclude(scanner("表名"));
