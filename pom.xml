@@ -13,5 +13,6 @@
     <module>springboot-start</module>
     <module>jdbc-template</module>
     <module>mybatis-plus</module>
+    <module>quartz</module>
   </modules>
 </project>

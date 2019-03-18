@@ -2,3 +2,11 @@ com:
   ligz:
     name: ligz
     content: beautiful
+#控制台
+spring:
+  output:
+    ansi:
+      enabled: detect
+#日志目录
+logging:
+  file: my.log
