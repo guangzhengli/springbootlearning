@@ -14,5 +14,7 @@
     <module>jdbc-template</module>
     <module>mybatis-plus</module>
     <module>quartz</module>
+    <module>dubboOne</module>
+    <module>dubboTwo</module>
   </modules>
 </project>
