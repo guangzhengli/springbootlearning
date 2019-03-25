@@ -14,5 +14,6 @@
     <module>jdbc-template</module>
     <module>mybatis-plus</module>
     <module>quartz</module>
+    <module>tools</module>
   </modules>
 </project>
