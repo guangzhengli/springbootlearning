@@ -15,5 +15,6 @@
     <module>mybatis-plus</module>
     <module>quartz</module>
     <module>tools</module>
+    <module>permission</module>
   </modules>
 </project>
