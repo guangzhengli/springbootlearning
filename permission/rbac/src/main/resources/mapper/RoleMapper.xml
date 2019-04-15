@@ -36,17 +36,17 @@
     <select id="selectPermissionsByPrimaryKey" parameterType="java.lang.Integer"
             resultType="com.ligz.model.Permission">
         select *
-        from role_premission, permission
-        where role_premission.permission_id = permission.id
-        and role_premission.role_id = #{id,jdbcType=INTEGER}
+        from role_permission, permission
+        where role_permission.permission_id = permission.id
+        and role_permission.role_id = #{id,jdbcType=INTEGER}
     </select>
 
     <delete id="deletePermissions" parameterType="java.lang.Integer">
-        delete from role_premission
+        delete from role_permission
         where role_id = #{id,jdbcType=INTEGER}
     </delete>
 
     <insert id="insertRolePermission">
-        insert into role_premission (role_id, permission_id) VALUES (#{role_id}, #{permission_id})
+        insert into role_permission (role_id, permission_id) VALUES (#{role_id}, #{permission_id})
     </insert>
 </mapper>
