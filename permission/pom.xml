@@ -15,6 +15,7 @@
     <description>这是专门针对权限的仓库,里面会有自己设计的RBAC (Role-Based Access Control) 基于角色的权限访问控制，shiro，springSecurity</description>
     <modules>
         <module>rbac</module>
+        <module>spring-shiro</module>
     </modules>
 
 
