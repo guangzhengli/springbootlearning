@@ -1,6 +1,7 @@
 package com.ligz.shiro;
 
 import com.ligz.model.User;
+import org.apache.log4j.Logger;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -16,8 +17,11 @@ import java.util.Set;
  * author:ligz
  */
 public class MyRealm extends AuthorizingRealm {
+    private static final Logger logger = Logger.getLogger(MyRealm.class);
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        logger.info("从数据库中读取授权信息...");
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 
         Set<String> roles = new HashSet<>();

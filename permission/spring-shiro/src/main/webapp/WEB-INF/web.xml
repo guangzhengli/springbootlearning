@@ -13,6 +13,7 @@
     <param-value>
       classpath:spring.xml,
       classpath:spring-shiro.xml
+      classpath:spring-redis.xml
     </param-value>
   </context-param>
 

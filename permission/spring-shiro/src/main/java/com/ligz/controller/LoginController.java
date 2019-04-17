@@ -19,12 +19,13 @@ public class LoginController {
     @ResponseBody
     public String login(User user) {
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
+        UsernamePasswordToken token =
+                new UsernamePasswordToken(user.getUsername(), user.getPassword(), user.getRememberMe());
         try {
             subject.login(token);
         } catch (AuthenticationException e) {
             return e.getMessage();
         }
-        return "success";
+        return "login success";
     }
 }

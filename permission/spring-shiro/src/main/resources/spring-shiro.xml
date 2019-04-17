@@ -17,6 +17,7 @@
             <value>
                 /login.jsp = anon
                 /login = anon
+                /remember.jsp = user
                 /user.jsp = roles[user]
                 /admin.jsp = roles[admin]
                 /userList.jsp = perms[add]
@@ -27,7 +28,11 @@
 
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
+        <property name="cacheManager" ref="redisCacheManager"/>
+        <property name="sessionManager" ref="sessionManager"/>
+        <property name="rememberMeManager" ref="rememberMeManager"/>
     </bean>
+
 
     <bean id="myRealm" class="com.ligz.shiro.MyRealm">
         <property name="credentialsMatcher" ref="credentialsMatcher"/>
@@ -35,5 +40,21 @@
 
     <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
         <property name="hashAlgorithmName" value="md5" />
+    </bean>
+
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionListeners" ref="mySessionListener"/>
+        <property name="sessionDAO" ref="redisSessionDAO"/>
+    </bean>
+
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="cookie"/>
+    </bean>
+
+    <bean id="cookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <!-- cookie 名称 -->
+        <property name="name" value="rememberMe"/>
+        <!-- cookie 过期时间 -->
+        <property name="maxAge" value="2592000"/><!-- 30天 -->
     </bean>
 </beans>
