@@ -16,5 +16,7 @@
     <module>quartz</module>
     <module>tools</module>
     <module>permission</module>
+    <module>test</module>
+    <module>spring-security</module>
   </modules>
 </project>
