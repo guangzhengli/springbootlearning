@@ -18,5 +18,6 @@
     <module>permission</module>
     <module>test</module>
     <module>spring-security</module>
+      <module>spring-security-oauth</module>
   </modules>
 </project>
